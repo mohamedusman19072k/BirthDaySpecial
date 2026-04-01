@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday SaiDhuMa 🎂 From UsMan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600;700&family=Parisienne&family=Satisfy&family=Noto+Sans+Tamil:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --midnight: #1a1a2e;
+            --royal-purple: #6a2c70;
+            --soft-gold: #f4c430;
+            --pearl-white: #f9f9f9;
+            --lavender: #b8a0d6;
+            --deep-blue: #0f0f1e;
+            --rose-pink: #ff6b9d;
+            --silver: #c0c0c0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: radial-gradient(circle at 50% 50%, var(--midnight) 0%, var(--deep-blue) 100%);
+            color: var(--pearl-white);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body.tamil {
+            font-family: 'Noto Sans Tamil', sans-serif;
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            z-index: 1000;
+            background: linear-gradient(135deg, var(--royal-purple), var(--soft-gold));
+            color: white;
+            border: none;
+            padding: 0.9rem 1.8rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(106, 44, 112, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .lang-toggle:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(106, 44, 112, 0.6);
+        }
+
+        /* Starfield Background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Landing Page */
+        .landing {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+            padding: 2rem;
+        }
+
+        .birthday-icon {
+            font-size: clamp(5rem, 15vw, 9rem);
+            margin-bottom: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .landing-title {
+            font-family: 'Parisienne', cursive;
+            font-size: clamp(3.5rem, 12vw, 7rem);
+            color: var(--soft-gold);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 30px rgba(244, 196, 48, 0.6);
+            opacity: 0;
+            animation: glow-in 2s ease forwards;
+        }
+
+        body.tamil .landing-title {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-weight: 700;
+        }
+
+        @keyframes glow-in {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .landing-subtitle {
+            font-family: 'Satisfy', cursive;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            color: var(--lavender);
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fade-up 2s ease 0.5s forwards;
+        }
+
+        body.tamil .landing-subtitle {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-weight: 600;
+        }
+
+        .landing-message {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            color: var(--pearl-white);
+            text-align: center;
+            max-width: 600px;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fade-up 2s ease 1s forwards;
+        }
+
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .enter-btn {
+            background: linear-gradient(135deg, var(--royal-purple), var(--soft-gold));
+            color: white;
+            border: none;
+            padding: 1.3rem 3.5rem;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 40px rgba(244, 196, 48, 0.4);
+            transition: all 0.4s ease;
+            opacity: 0;
+            animation: fade-up 2s ease 1.5s forwards;
+        }
+
+        .enter-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(244, 196, 48, 0.6);
+        }
+
+        .enter-btn:active {
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: none;
+            min-height: 100vh;
+            position: relative;
+            z-index: 10;
+            padding: 5rem 2rem 3rem;
+        }
+
+        .main-content.active {
+            display: block;
+            animation: reveal 1.2s ease;
+        }
+
+        @keyframes reveal {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .content-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Birthday Header */
+        .birthday-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            animation: slide-down 1s ease;
+        }
+
+        @keyframes slide-down {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .birthday-header h1 {
+            font-family: 'Parisienne', cursive;
+            font-size: clamp(3rem, 10vw, 6rem);
+            color: var(--soft-gold);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(244, 196, 48, 0.5);
+        }
+
+        body.tamil .birthday-header h1 {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-weight: 700;
+        }
+
+        .birthday-header .from-line {
+            font-family: 'Satisfy', cursive;
+            font-size: clamp(1.3rem, 4vw, 2rem);
+            color: var(--lavender);
+            margin-top: 0.5rem;
+        }
+
+        body.tamil .birthday-header .from-line {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Special Message Card */
+        .message-card {
+            background: linear-gradient(135deg, rgba(106, 44, 112, 0.2), rgba(26, 26, 46, 0.5));
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(244, 196, 48, 0.3);
+            border-radius: 30px;
+            padding: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 4rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            animation: card-appear 1.2s ease 0.3s backwards;
+        }
+
+        @keyframes card-appear {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .message-card h2 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            color: var(--soft-gold);
+            text-align: center;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        body.tamil .message-card h2 {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .message-card p {
+            font-size: clamp(1.15rem, 3vw, 1.4rem);
+            line-height: 2;
+            color: var(--pearl-white);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .message-card .signature {
+            font-family: 'Parisienne', cursive;
+            font-size: clamp(2rem, 6vw, 3rem);
+            color: var(--soft-gold);
+            text-align: right;
+            margin-top: 3rem;
+        }
+
+        body.tamil .message-card .signature {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Wishes Grid */
+        .wishes-section {
+            margin-bottom: 5rem;
+            animation: card-appear 1.2s ease 0.6s backwards;
+        }
+
+        .section-header {
+            font-family: 'Libre Baskerville', serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            color: var(--soft-gold);
+            text-align: center;
+            margin-bottom: 3.5rem;
+            font-style: italic;
+        }
+
+        body.tamil .section-header {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .wishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .wish-card {
+            background: linear-gradient(135deg, rgba(184, 160, 214, 0.15), rgba(106, 44, 112, 0.15));
+            border: 2px solid rgba(244, 196, 48, 0.2);
+            border-radius: 25px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .wish-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            border-color: var(--soft-gold);
+            box-shadow: 0 25px 50px rgba(244, 196, 48, 0.3);
+            background: linear-gradient(135deg, rgba(184, 160, 214, 0.25), rgba(106, 44, 112, 0.25));
+        }
+
+        .wish-icon {
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .wish-title {
+            font-family: 'Libre Baskerville', serif;
+            font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+            color: var(--soft-gold);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        body.tamil .wish-title {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .wish-text {
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            line-height: 1.8;
+            color: var(--pearl-white);
+            opacity: 0.9;
+        }
+
+        /* Memory Timeline */
+        .timeline-section {
+            margin-bottom: 5rem;
+            animation: card-appear 1.2s ease 0.9s backwards;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--soft-gold), var(--royal-purple));
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--royal-purple), var(--soft-gold));
+            border: 5px solid var(--midnight);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 0 30px rgba(244, 196, 48, 0.6);
+            z-index: 10;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: linear-gradient(135deg, rgba(106, 44, 112, 0.2), rgba(26, 26, 46, 0.4));
+            border: 2px solid rgba(244, 196, 48, 0.3);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-10px);
+            border-color: var(--soft-gold);
+            box-shadow: 0 20px 40px rgba(244, 196, 48, 0.3);
+        }
+
+        .timeline-content h3 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: clamp(1.4rem, 4vw, 1.9rem);
+            color: var(--soft-gold);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        body.tamil .timeline-content h3 {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .timeline-content p {
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            line-height: 1.8;
+            color: var(--pearl-white);
+            opacity: 0.9;
+        }
+
+        /* Final Message */
+        .final-message {
+            background: linear-gradient(135deg, var(--royal-purple), var(--soft-gold));
+            border-radius: 30px;
+            padding: clamp(3rem, 8vw, 5rem) clamp(2rem, 5vw, 3rem);
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(106, 44, 112, 0.5);
+            animation: card-appear 1.2s ease 1.2s backwards;
+        }
+
+        .final-message h2 {
+            font-family: 'Parisienne', cursive;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        body.tamil .final-message h2 {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-weight: 700;
+        }
+
+        .final-message p {
+            font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+            line-height: 2;
+            color: white;
+        }
+
+        .final-message .names {
+            font-family: 'Satisfy', cursive;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: white;
+            margin-top: 2.5rem;
+        }
+
+        body.tamil .final-message .names {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: row !important;
+                padding-left: 90px;
+            }
+
+            .timeline-dot {
+                left: 30px;
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .wishes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lang-toggle {
+                top: 15px;
+                right: 15px;
+                padding: 0.7rem 1.4rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <button class="lang-toggle" onclick="toggleLanguage()" id="langBtn">
+        <span>🌐</span>
+        <span id="langText">தமிழ்</span>
+    </button>
+
+    <!-- Starfield Background -->
+    <div class="stars" id="starfield"></div>
+
+    <!-- Landing Page -->
+    <section class="landing" id="landing">
+        <div class="birthday-icon">🎂</div>
+        <h1 class="landing-title" data-en="Happy Birthday SaiDhuMa!" data-ta="பிறந்தநாள் வாழ்த்துக்கள் சயிதுமா!">Happy Birthday SaiDhuMa!</h1>
+        <p class="landing-subtitle" data-en="From Your Loving UsMan" data-ta="உங்கள் அன்பான உஸ்மானிடமிருந்து">From Your Loving UsMan</p>
+        <p class="landing-message" data-en="Today is your special day, and I want to make it unforgettable. Click below to read my heart..." data-ta="இன்று உங்கள் சிறப்பு நாள், இதை மறக்க முடியாததாக மாற்ற விரும்புகிறேன். என் இதயத்தை படிக்க கீழே கிளிக் செய்யுங்கள்...">Today is your special day, and I want to make it unforgettable. Click below to read my heart...</p>
+        <button class="enter-btn" onclick="revealContent()" data-en="Open My Heart 💖" data-ta="என் இதயத்தை திறங்கள் 💖">Open My Heart 💖</button>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-content" id="mainContent">
+        <div class="content-container">
+            <!-- Birthday Header -->
+            <div class="birthday-header">
+                <h1 data-en="Happy Birthday My Beautiful SaiDhuMa" data-ta="பிறந்தநாள் வாழ்த்துக்கள் என் அழகான சயிதுமா">Happy Birthday My Beautiful SaiDhuMa</h1>
+                <p class="from-line" data-en="With All My Love, UsMan 💖" data-ta="என் அனைத்து அன்புடன், உஸ்மான் 💖">With All My Love, UsMan 💖</p>
+            </div>
+
+            <!-- Special Message -->
+            <div class="message-card">
+                <h2 data-en="My Heart's Truth" data-ta="என் இதயத்தின் உண்மை">My Heart's Truth</h2>
+                <p data-en="Don't worry my love, just listen. You don't have to be afraid anymore because I'm only yours—completely, quietly, and forever." data-ta="கவலைப்படாதே என் அன்பே, கேட்டுக்கொள். இனி நீ பயப்பட வேண்டியதில்லை ஏனெனில் நான் உன்னுடையவன் மட்டுமே—முழுமையாக, அமைதியாக, என்றென்றும்.">Don't worry my love, just listen. You don't have to be afraid anymore because I'm only yours—completely, quietly, and forever.</p>
+                
+                <p data-en="My search ended the moment I found you. There is no one else I'm looking for, no better to chase, no best to replace you." data-ta="நான் உன்னைக் கண்டுபிடித்த தருணத்தில் என் தேடல் முடிந்தது. நான் வேறு யாரையும் தேடவில்லை, துரத்த சிறந்தவர் யாரும் இல்லை, உன்னை மாற்ற சிறந்தவர் யாரும் இல்லை.">My search ended the moment I found you. There is no one else I'm looking for, no better to chase, no best to replace you.</p>
+                
+                <p data-en="You are not just someone I love—you are where my heart decided to rest. Without you, everything feels like breathing without living, like a sky without stars, like a song without sound." data-ta="நீ நான் நேசிக்கும் ஒருவர் மட்டுமல்ல—என் இதயம் ஓய்வெடுக்க முடிவு செய்த இடம் நீ. உன் இல்லாமல், எல்லாம் வாழாமல் சுவாசிப்பது போல், நட்சத்திரங்கள் இல்லாத வானம் போல், ஒலியில்லா பாடல் போல் உணர்கிறது.">You are not just someone I love—you are where my heart decided to rest. Without you, everything feels like breathing without living, like a sky without stars, like a song without sound.</p>
+                
+                <p data-en="I have already chosen you beyond doubt and beyond time. Because without you, even existence feels empty, and with you, life finally feels like home." data-ta="சந்தேகத்திற்கு அப்பாலும் காலத்திற்கு அப்பாலும் நான் ஏற்கனவே உன்னை தேர்ந்தெடுத்துவிட்டேன். ஏனெனில் உன் இல்லாமல், இருப்பு கூட வெறுமையாக உணர்கிறது, உன்னுடன், வாழ்க்கை இறுதியாக வீடு போல் உணர்கிறது.">I have already chosen you beyond doubt and beyond time. Because without you, even existence feels empty, and with you, life finally feels like home.</p>
+
+                <div class="signature" data-en="Forever Yours, UsMan 💖" data-ta="என்றென்றும் உங்களுடையவன், உஸ்மான் 💖">Forever Yours, UsMan 💖</div>
+            </div>
+
+            <!-- Birthday Wishes -->
+            <div class="wishes-section">
+                <h2 class="section-header" data-en="My Wishes For You" data-ta="உங்களுக்கான என் வாழ்த்துக்கள்">My Wishes For You</h2>
+                <div class="wishes-grid">
+                    <div class="wish-card">
+                        <span class="wish-icon">✨</span>
+                        <h3 class="wish-title" data-en="Endless Joy" data-ta="முடிவில்லாத மகிழ்ச்சி">Endless Joy</h3>
+                        <p class="wish-text" data-en="May your life be filled with laughter, happiness, and countless moments of pure joy that make your heart dance." data-ta="உங்கள் வாழ்க்கை சிரிப்பு, மகிழ்ச்சி மற்றும் உங்கள் இதயத்தை நடனமாட வைக்கும் எண்ணற்ற தூய மகிழ்ச்சி தருணங்களால் நிரம்பட்டும்.">May your life be filled with laughter, happiness, and countless moments of pure joy that make your heart dance.</p>
+                    </div>
+
+                    <div class="wish-card">
+                        <span class="wish-icon">🌟</span>
+                        <h3 class="wish-title" data-en="Dreams Come True" data-ta="கனவுகள் நனவாகட்டும்">Dreams Come True</h3>
+                        <p class="wish-text" data-en="May every dream you hold in your heart blossom into beautiful reality, and may you reach every star you wish upon." data-ta="உங்கள் இதயத்தில் வைத்திருக்கும் ஒவ்வொரு கனவும் அழகான உண்மையாக மலரட்டும், நீங்கள் விரும்பும் ஒவ்வொரு நட்சத்திரத்தையும் அடையட்டும்.">May every dream you hold in your heart blossom into beautiful reality, and may you reach every star you wish upon.</p>
+                    </div>
+
+                    <div class="wish-card">
+                        <span class="wish-icon">💫</span>
+                        <h3 class="wish-title" data-en="Boundless Love" data-ta="எல்லையற்ற அன்பு">Boundless Love</h3>
+                        <p class="wish-text" data-en="May you always feel loved, cherished, and valued—not just today, but every single day of your beautiful life." data-ta="இன்று மட்டுமல்ல, உங்கள் அழகான வாழ்க்கையின் ஒவ்வொரு நாளும் நீங்கள் நேசிக்கப்படுவதாகவும், மதிக்கப்படுவதாகவும், மதிப்புள்ளவராகவும் உணரட்டும்.">May you always feel loved, cherished, and valued—not just today, but every single day of your beautiful life.</p>
+                    </div>
+
+                    <div class="wish-card">
+                        <span class="wish-icon">🎁</span>
+                        <h3 class="wish-title" data-en="Beautiful Surprises" data-ta="அழகான ஆச்சரியங்கள்">Beautiful Surprises</h3>
+                        <p class="wish-text" data-en="May life surprise you with wonderful moments, unexpected blessings, and magical experiences that take your breath away." data-ta="வாழ்க்கை உங்களை அற்புதமான தருணங்கள், எதிர்பாராத ஆசீர்வாதங்கள் மற்றும் உங்கள் சுவாசத்தை எடுத்துக்கொள்ளும் மாயாஜால அனுபவங்களால் ஆச்சரியப்படுத்தட்டும்.">May life surprise you with wonderful moments, unexpected blessings, and magical experiences that take your breath away.</p>
+                    </div>
+
+                    <div class="wish-card">
+                        <span class="wish-icon">🌸</span>
+                        <h3 class="wish-title" data-en="Health & Strength" data-ta="ஆரோக்கியம் & வலிமை">Health & Strength</h3>
+                        <p class="wish-text" data-en="May you always have the strength to overcome challenges and the health to enjoy every precious moment life offers." data-ta="சவால்களை சமாளிக்க எப்போதும் வலிமை இருக்கட்டும், வாழ்க்கை வழங்கும் ஒவ்வொரு விலைமதிப்பற்ற தருணத்தையும் அனுபவிக்க ஆரோக்கியம் இருக்கட்டும்.">May you always have the strength to overcome challenges and the health to enjoy every precious moment life offers.</p>
+                    </div>
+
+                    <div class="wish-card">
+                        <span class="wish-icon">💝</span>
+                        <h3 class="wish-title" data-en="Forever Together" data-ta="என்றென்றும் ஒன்றாக">Forever Together</h3>
+                        <p class="wish-text" data-en="May our love continue to grow stronger with each passing year, building a lifetime of beautiful memories together." data-ta="ஒவ்வொரு ஆண்டும் கடந்து செல்லும்போது நம் அன்பு வலிமையாக வளரட்டும், ஒன்றாக அழகான நினைவுகளின் வாழ்நாளை உருவாக்கட்டும்.">May our love continue to grow stronger with each passing year, building a lifetime of beautiful memories together.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Memory Timeline -->
+            <div class="timeline-section">
+                <h2 class="section-header" data-en="Our Beautiful Journey" data-ta="நம்முடைய அழகான பயணம்">Our Beautiful Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot">💫</div>
+                        <div class="timeline-content">
+                            <h3 data-en="When I First Saw You" data-ta="நான் உன்னை முதலில் பார்த்தபோது">When I First Saw You</h3>
+                            <p data-en="The moment our eyes met, time stopped. I knew in that instant that my life would never be the same. You were the answer to every question my heart had been asking." data-ta="நம் கண்கள் சந்தித்த தருணம், நேரம் நின்றது. என் வாழ்க்கை ஒருபோதும் அப்படியே இருக்காது என்று அந்த கணத்தில் எனக்குத் தெரியும். என் இதயம் கேட்டுக்கொண்டிருந்த ஒவ்வொரு கேள்விக்கும் நீ பதில்.">The moment our eyes met, time stopped. I knew in that instant that my life would never be the same. You were the answer to every question my heart had been asking.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot">💝</div>
+                        <div class="timeline-content">
+                            <h3 data-en="Falling in Love" data-ta="காதலில் விழுதல்">Falling in Love</h3>
+                            <p data-en="Every conversation, every smile, every moment with you made me fall deeper. You became my favorite thought, my sweetest dream, my everything." data-ta="ஒவ்வொரு உரையாடலும், ஒவ்வொரு புன்னகையும், உன்னுடனான ஒவ்வொரு கணமும் என்னை ஆழமாக விழச் செய்தது. நீ என் விருப்பமான எண்ணம், என் இனிமையான கனவு, என் அனைத்தும் ஆனாய்.">Every conversation, every smile, every moment with you made me fall deeper. You became my favorite thought, my sweetest dream, my everything.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot">💍</div>
+                        <div class="timeline-content">
+                            <h3 data-en="The Day You Said Yes" data-ta="நீ ஆம் என்று சொன்ன நாள்">The Day You Said Yes</h3>
+                            <p data-en="When you agreed to be mine forever, my heart found its home. That moment will remain the most beautiful memory of my entire life." data-ta="நீ என்றென்றும் என்னுடையவளாக இருக்க ஒப்புக்கொண்டபோது, ​​என் இதயம் தன் வீட்டைக் கண்டது. அந்த தருணம் என் முழு வாழ்க்கையிலும் மிக அழகான நினைவாக இருக்கும்.">When you agreed to be mine forever, my heart found its home. That moment will remain the most beautiful memory of my entire life.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot">🎂</div>
+                        <div class="timeline-content">
+                            <h3 data-en="Today - Your Birthday" data-ta="இன்று - உங்கள் பிறந்தநாள்">Today - Your Birthday</h3>
+                            <p data-en="Today we celebrate you—the most amazing person I know. Every year with you is a gift, and I promise to make every birthday more special than the last." data-ta="இன்று நாம் உன்னைக் கொண்டாடுகிறோம்—நான் அறிந்த மிக அற்புதமான நபர். உன்னுடன் இருக்கும் ஒவ்வொரு வருடமும் ஒரு பரிசு, கடைசியை விட ஒவ்வொரு பிறந்தநாளையும் மிகவும் சிறப்பாக மாற்ற உறுதியளிக்கிறேன்.">Today we celebrate you—the most amazing person I know. Every year with you is a gift, and I promise to make every birthday more special than the last.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot">✨</div>
+                        <div class="timeline-content">
+                            <h3 data-en="Forever Ahead" data-ta="என்றென்றும் முன்னால்">Forever Ahead</h3>
+                            <p data-en="This is just the beginning. We have a lifetime of birthdays, anniversaries, and beautiful moments waiting for us. And I can't wait to celebrate every single one with you." data-ta="இது ஆரம்பம் மட்டுமே. நமக்காக காத்திருக்கும் பிறந்தநாள்கள், ஆண்டுவிழாக்கள் மற்றும் அழகான தருணங்களின் வாழ்நாள் உள்ளது. ஒவ்வொன்றையும் உன்னுடன் கொண்டாட நான் காத்திருக்க முடியாது.">This is just the beginning. We have a lifetime of birthdays, anniversaries, and beautiful moments waiting for us. And I can't wait to celebrate every single one with you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Message -->
+            <div class="final-message">
+                <h2 data-en="Happy Birthday My Love!" data-ta="பிறந்தநாள் வாழ்த்துக்கள் என் அன்பே!">Happy Birthday My Love!</h2>
+                <p data-en="You are the reason my heart beats, the light in my darkness, the song in my silence. Today and always, I celebrate you." data-ta="என் இதயம் துடிக்க காரணம் நீ, என் இருளில் வெளிச்சம் நீ, என் மௌனத்தில் பாடல் நீ. இன்றும் எப்போதும், நான் உன்னைக் கொண்டாடுகிறேன்.">You are the reason my heart beats, the light in my darkness, the song in my silence. Today and always, I celebrate you.</p>
+                <p class="names" data-en="With All My Heart, UsMan 💖 for SaiDhuMa" data-ta="என் முழு இதயத்துடன், உஸ்மான் 💖 சயிதுமாவுக்காக">With All My Heart, UsMan 💖 for SaiDhuMa</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let currentLang = 'en';
+
+        // Create starfield
+        function createStars() {
+            const starfield = document.getElementById('starfield');
+            for (let i = 0; i < 200; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starfield.appendChild(star);
+            }
+        }
+
+        // Toggle Language
+        function toggleLanguage() {
+            const body = document.body;
+            const langBtn = document.getElementById('langText');
+            
+            if (currentLang === 'en') {
+                currentLang = 'ta';
+                body.classList.add('tamil');
+                langBtn.textContent = 'English';
+                translateToTamil();
+            } else {
+                currentLang = 'en';
+                body.classList.remove('tamil');
+                langBtn.textContent = 'தமிழ்';
+                translateToEnglish();
+            }
+        }
+
+        function translateToTamil() {
+            const elements = document.querySelectorAll('[data-ta]');
+            elements.forEach(el => {
+                const tamilText = el.getAttribute('data-ta');
+                if (el.innerHTML.includes('<br>')) {
+                    el.innerHTML = tamilText;
+                } else {
+                    el.textContent = tamilText;
+                }
+            });
+        }
+
+        function translateToEnglish() {
+            const elements = document.querySelectorAll('[data-en]');
+            elements.forEach(el => {
+                const englishText = el.getAttribute('data-en');
+                if (el.innerHTML.includes('<br>')) {
+                    el.innerHTML = englishText;
+                } else {
+                    el.textContent = englishText;
+                }
+            });
+        }
+
+        // Reveal content
+        function revealContent() {
+            const landing = document.getElementById('landing');
+            const mainContent = document.getElementById('mainContent');
+
+            landing.style.animation = 'fadeOut 1s ease forwards';
+            setTimeout(() => {
+                landing.style.display = 'none';
+                mainContent.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 1000);
+        }
+
+        // Initialize
+        createStars();
+
+        // Prevent double-tap zoom
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    </script>
+</body>
+</html>
